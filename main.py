@@ -45,6 +45,7 @@ async def get_question(question_id: int, db: Session = Depends(get_db)):
     if not question:
         raise HTTPException(status_code=404, detail="Question not found")
     return question
+
 @fastapi_app.get("/choices/{question_id}")
 async def get_choices(question_id:int, db: Session = Depends(get_db)):
     choices = db.query(models.Choices).filter(models.Choices.question_id == question_id).all()
