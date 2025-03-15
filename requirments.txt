@@ -1,0 +1,4 @@
+python
+fastApi
+Postgres
+uvicorn (server)
